@@ -23,3 +23,6 @@ USER 10001
 
 # Expose the port for the C2 server
 EXPOSE 31337
+
+# Start Pupy C2 server
+CMD ["python3", "pupysh.py"]
