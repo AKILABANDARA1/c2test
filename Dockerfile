@@ -17,4 +17,8 @@ EXPOSE 31337
 
 RUN useradd -m -s /bin/bash pupyuser
 
+RUN useradd -m -s /bin/bash -u 10001 pupyuser
+
+RUN chown -R 10001:10001 /opt/pupy
+
 USER pupyuser
