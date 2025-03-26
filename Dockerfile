@@ -14,3 +14,7 @@ RUN chmod +x install.sh && ./install.sh
 
 # Expose the port for the C2 server
 EXPOSE 31337
+
+RUN useradd -m -s /bin/bash pupyuser
+
+USER pupyuser
