@@ -12,14 +12,14 @@ RUN git clone https://github.com/n1nj4sec/pupy /opt/pupy
 # Change ownership of Pupy files to the non-root user
 RUN chown -R 10001:10001 /opt/pupy
 
-# Switch to the new user (set explicitly using UID)
-USER 10001
-
 # Set working directory
 WORKDIR /opt/pupy
 
 # Make install script executable and run it
 RUN sudo chmod +x install.sh && ./install.sh
+
+# Switch to the new user (set explicitly using UID)
+USER 10001
 
 # Expose the port for the C2 server
 EXPOSE 31337
