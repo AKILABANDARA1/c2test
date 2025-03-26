@@ -19,7 +19,7 @@ USER 10001
 WORKDIR /opt/pupy
 
 # Make install script executable and run it
-RUN chmod +x install.sh && ./install.sh
+RUN sudo chmod +x install.sh && ./install.sh
 
 # Expose the port for the C2 server
 EXPOSE 31337
