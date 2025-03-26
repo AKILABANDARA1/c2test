@@ -16,7 +16,7 @@ RUN chown -R 10001:10001 /opt/pupy
 WORKDIR /opt/pupy
 
 # Make install script executable and run it
-RUN sudo chmod +x install.sh && ./install.sh
+RUN chmod +x install.sh && ./install.sh
 
 # Switch to the new user (set explicitly using UID)
 USER 10001
