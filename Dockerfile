@@ -26,16 +26,18 @@
 
 # Start Pupy C2 server
 #CMD ["python3", "pupysh.py"]
-FROM ghcr.io/deimosc2/deimos:latest
 
-# Create a non-root user with UID 10014 (within Choreo's allowed range)
-RUN useradd -m -u 10014 deimosuser
+FROM bishopfox/sliver:latest
 
-# Set the user for the container
+# Create a non-root user with UID 10014 (to pass Choreo checks)
+RUN useradd -m -u 10014 sliveruser
+
+# Switch to the non-root user
 USER 10014
 
 EXPOSE 8080
 
-CMD ["./deimos", "server"]
+CMD ["sliver-server"]
+
 
 
