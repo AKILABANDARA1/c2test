@@ -11,4 +11,4 @@ USER myc2user
 EXPOSE 80
 
 # Run the custom C2 server (ensure that this is the correct entrypoint command)
-CMD ["python", "app7.py"]
+CMD ["python3", "app7.py"]
