@@ -28,6 +28,13 @@
 #CMD ["python3", "pupysh.py"]
 FROM ghcr.io/deimosc2/deimos:latest
 
+# Create a non-root user
+RUN useradd -m deimosuser
+
+# Set the user for the container
+USER deimosuser
+
 EXPOSE 8080
 
 CMD ["./deimos", "server"]
+
