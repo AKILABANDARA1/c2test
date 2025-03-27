@@ -1,7 +1,7 @@
 # Use the custom C2 server image as the base image
 FROM csocdockeruser/my-c2-server:latest
 
-# Create a non-root user with UID 10014 (to pass Choreo checks)
+# Create a non-root user with UID 10014 (valid for Choreo checks)
 RUN useradd -m -u 10014 myc2user
 
 # Switch to the non-root user
