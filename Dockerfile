@@ -28,13 +28,14 @@
 #CMD ["python3", "pupysh.py"]
 FROM ghcr.io/deimosc2/deimos:latest
 
-# Create a non-root user
-RUN useradd -m deimosuser
+# Create a non-root user with UID 10014 (within Choreo's allowed range)
+RUN useradd -m -u 10014 deimosuser
 
 # Set the user for the container
-USER deimosuser
+USER 10014
 
 EXPOSE 8080
 
 CMD ["./deimos", "server"]
+
 
