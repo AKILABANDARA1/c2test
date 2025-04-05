@@ -1,6 +1,10 @@
 # Use the custom C2 server image as the base image
 FROM csocdockeruser/my-c2-server:latest
 
+RUN apt-get update && apt-get install -y bash
+
+RUN apt-get update && apt-get install -y passwd
+
 # Create a non-root user with UID 10014 (valid for Choreo checks)
 RUN useradd -m -u 10014 
 
