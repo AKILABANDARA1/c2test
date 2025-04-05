@@ -6,7 +6,7 @@ FROM csocdockeruser/my-c2-server:latest
 
 # Set the user explicitly to ensure it's within the required range
 #USER 10014
-RUN groupadd -g 10001 appuser && useradd -u 10001 -g appuser -s /bin/sh appuser
+#RUN groupadd -g 10001 appuser && useradd -u 10001 -g appuser -s /bin/sh appuser
 
 USER 10001
 
